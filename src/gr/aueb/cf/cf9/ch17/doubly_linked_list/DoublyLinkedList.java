@@ -1,11 +1,11 @@
 package gr.aueb.cf.cf9.ch17.doubly_linked_list;
 
 public class DoublyLinkedList<T> {
-    private Node<T> head = null;
-    private Node<T> tail = null;
+    private gr.aueb.cf.cf9.ch17.doubly_linked_list.Node1<T> head = null;
+    private gr.aueb.cf.cf9.ch17.doubly_linked_list.Node1<T> tail = null;
 
     public void insertFirst(T t) {
-        Node<T> tmp = new Node<>();
+        gr.aueb.cf.cf9.ch17.doubly_linked_list.Node1<T> tmp = new gr.aueb.cf.cf9.ch17.doubly_linked_list.Node1<>();
         tmp.setItem(t);
         tmp.setNext(head);
         tmp.setPrev(null);
@@ -26,7 +26,7 @@ public class DoublyLinkedList<T> {
             return;
         }
 
-        Node<T> tmp = new Node<>();
+        gr.aueb.cf.cf9.ch17.doubly_linked_list.Node1<T> tmp = new gr.aueb.cf.cf9.ch17.doubly_linked_list.Node1<>();
         tmp.setItem(t);
         tmp.setNext(null);
         tmp.setPrev(tail);
@@ -39,9 +39,9 @@ public class DoublyLinkedList<T> {
      * Time complexity O(1).
      * @return
      */
-    public Node<T> removeFirst() {
+    public gr.aueb.cf.cf9.ch17.doubly_linked_list.Node1<T> removeFirst() {
         if (isEmpty()) return null;
-        Node<T> nodeToReturn = head;
+        gr.aueb.cf.cf9.ch17.doubly_linked_list.Node1<T> nodeToReturn = head;
         if (head.getNext() == null) tail = null;
         head = head.getNext();
         if (head != null) head.setPrev(null);
@@ -52,20 +52,20 @@ public class DoublyLinkedList<T> {
      * Time complexity O(1).
      * @return
      */
-    public Node<T> removeLast() {
+    public gr.aueb.cf.cf9.ch17.doubly_linked_list.Node1<T> removeLast() {
         if (isEmpty() || head.getNext() == null)
             return removeFirst();
 
-        Node<T> nodeToReturn = tail;
+        gr.aueb.cf.cf9.ch17.doubly_linked_list.Node1<T> nodeToReturn = tail;
         tail = tail.getPrev();
         tail.setNext(null);
         return nodeToReturn;
     }
 
-    public Node<T> get(T t) {
-        Node<T> nodeToReturn = null;
+    public gr.aueb.cf.cf9.ch17.doubly_linked_list.Node1<T> get(T t) {
+        gr.aueb.cf.cf9.ch17.doubly_linked_list.Node1<T> nodeToReturn = null;
 
-        for (Node<T> n = head; n != null; n = n.getNext()) {
+        for (gr.aueb.cf.cf9.ch17.doubly_linked_list.Node1<T> n = head; n != null; n = n.getNext()) {
             if (n.getItem().equals(t)) {        // equals should have been overriden in T
                 nodeToReturn = n;
                 break;
@@ -75,13 +75,13 @@ public class DoublyLinkedList<T> {
     }
 
     public void traverse() {
-        for (Node<T> n = head; n != null; n = n.getNext()) {
+        for (gr.aueb.cf.cf9.ch17.doubly_linked_list.Node1<T> n = head; n != null; n = n.getNext()) {
             System.out.println(n.getItem());
         }
     }
 
     public void traverseReverse() {
-        for (Node<T> n = tail; n != null; n = n.getPrev()) {
+        for (gr.aueb.cf.cf9.ch17.doubly_linked_list.Node1<T> n = tail; n != null; n = n.getPrev()) {
             System.out.println(n.getItem());
         }
     }
@@ -89,7 +89,7 @@ public class DoublyLinkedList<T> {
 
     public int size() {
         int counter = 0;
-        for (Node<T> n = head; n != null; n = n.getNext()) {
+        for (gr.aueb.cf.cf9.ch17.doubly_linked_list.Node1<T> n = head; n != null; n = n.getNext()) {
             counter++;
         }
         return counter;

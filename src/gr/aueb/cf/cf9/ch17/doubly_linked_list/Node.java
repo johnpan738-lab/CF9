@@ -2,8 +2,8 @@ package gr.aueb.cf.cf9.ch17.doubly_linked_list;
 
 public class Node<T> {
     private T item;
-    private Node<T> prev;
-    private Node<T> next;
+    private gr.aueb.cf.cf9.ch17.doubly_linked_list.Node1<T> prev;
+    private gr.aueb.cf.cf9.ch17.doubly_linked_list.Node1<T> next;
 
     public T getItem() {
         return item;
@@ -13,19 +13,19 @@ public class Node<T> {
         this.item = item;
     }
 
-    public Node<T> getPrev() {
+    public gr.aueb.cf.cf9.ch17.doubly_linked_list.Node1<T> getPrev() {
         return prev;
     }
 
-    public void setPrev(Node<T> prev) {
+    public void setPrev(gr.aueb.cf.cf9.ch17.doubly_linked_list.Node1<T> prev) {
         this.prev = prev;
     }
 
-    public Node<T> getNext() {
+    public gr.aueb.cf.cf9.ch17.doubly_linked_list.Node1<T> getNext() {
         return next;
     }
 
-    public void setNext(Node<T> next) {
+    public void setNext(gr.aueb.cf.cf9.ch17.doubly_linked_list.Node1<T> next) {
         this.next = next;
     }
 }
