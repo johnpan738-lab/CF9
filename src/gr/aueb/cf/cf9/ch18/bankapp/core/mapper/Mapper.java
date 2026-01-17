@@ -10,7 +10,6 @@ public class Mapper {
      * No instances of this class should be available.
      */
     private Mapper() {
-
     }
 
     public static Account mapToModelEntity(AccountInsertDTO dto) {

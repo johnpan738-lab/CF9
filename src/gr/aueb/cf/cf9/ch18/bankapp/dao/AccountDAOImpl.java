@@ -38,7 +38,8 @@ public class AccountDAOImpl implements IAccountDAO {
 
     @Override
     public List<Account> getAllAccounts() {
-        //return new ArrayList<>(accounts);
+        // return accounts;
+        // return new ArrayList<>(accounts);
         return Collections.unmodifiableList(accounts);
         // return List.copyOf(accounts);
     }
@@ -47,5 +48,9 @@ public class AccountDAOImpl implements IAccountDAO {
     public boolean isAccountExists(String iban) {
         return accounts.stream()
                 .anyMatch(account -> account.getIban().equals(iban));
+    }
+
+    public long count() {
+        return accounts.size();
     }
 }
